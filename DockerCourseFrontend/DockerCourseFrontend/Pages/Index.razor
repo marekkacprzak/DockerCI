@@ -1,0 +1,31 @@
+﻿@page "/"
+
+@inject HttpClient HttpClient
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?"/>
+
+<button class="btn btn-primary" @onclick="GetPodcasts">Get Podcast</button>
+
+@if (_podcast is not null)
+{
+    <ul>
+        @foreach (var podcast in _podcast)
+        {
+            <li>@podcast</li>
+        }
+    </ul>
+}
+
+@code {
+    private List<string>? _podcast;
+    
+    private async Task GetPodcasts()
+    {
+        _podcast = await HttpClient.GetFromJsonAsync<List<string>>("http://host.docker.internal:17860/podcasts");
+    }
+}

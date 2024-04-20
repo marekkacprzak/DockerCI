@@ -1,0 +1,37 @@
+services:
+
+  frontend:
+    build:
+      context:  ./DockerCourseFrontend/.
+      dockerfile: DockerCourseFrontend/Dockerfile
+    image: marekkacprzak/frontend
+    container_name: frontend
+    ports:
+      - 1234:80
+
+  api:
+    build:
+      context: ./DockerCourseApi/.
+      dockerfile: DockerCourseApi/Dockerfile
+    image: marekkacprzak/api
+    container_name: api
+    ports:
+      - 17860:80
+
+  database:
+    image: mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+    container_name: database
+    environment:
+      - ACCEPT_EULA=true
+      - MSSQL_SA_PASSWORD=yourStrong(!)Password
+    ports:
+      - 1433:1433
+
+  database-seed:
+    image: marekkacprzak/database-seed
+    depends_on:
+      - database
+    build:
+      context: Database/
+      dockerfile: Dockerfile
+    container_name: database-seed
