@@ -1,5 +1,7 @@
+volumes:
+  sqldb-data:
+    # external: true
 services:
-
   frontend:
     build:
       context:  ./DockerCourseFrontend/.
@@ -19,6 +21,8 @@ services:
       - 17860:80
 
   database:
+    volumes:
+      - sqldb-data:/var/opt/mssql
     image: mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
     container_name: database
     environment:
