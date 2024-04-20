@@ -31,10 +31,7 @@ app.MapGet("/podcasts", async (IOptions<Settings> settings) =>
 app.Run();
 
 record Podcast(Guid Id, string Title);
-<<<<<<< HEAD
-=======
-
+ 
 public partial class Program
 {
 }
->>>>>>> cb2e093 (Add Testing - refactor settings)

@@ -25,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="DockerCourseApi\DockerCourseApi.csproj" />
+      <ProjectReference Include="..\DockerCourseApi\DockerCourseApi\DockerCourseApi.csproj" />
     </ItemGroup>
 
 </Project>
