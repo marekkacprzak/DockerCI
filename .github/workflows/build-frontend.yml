@@ -28,7 +28,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ./DockerCourseFrontend/DockerCourseFrontend/.
+          context: ./DockerCourseFrontend/.
           file: ./DockerCourseFrontend/DockerCourseFrontend/Dockerfile
           push: true
           tags: |
