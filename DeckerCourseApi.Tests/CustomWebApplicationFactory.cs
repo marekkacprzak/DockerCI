@@ -1,0 +1,28 @@
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.Configuration; 
+
+namespace DeckerCourseApi.Tests;
+
+public class CustomWebApplicationFactory : WebApplicationFactory<Program>
+{
+    protected override void ConfigureWebHost(IWebHostBuilder builder)
+    {
+        builder.ConfigureAppConfiguration(config =>
+        {
+            config.AddInMemoryCollection(
+                new[]
+                {
+                    new KeyValuePair<string, string?>("ConnectionString",
+                        "Server=tcp:localhost;Initial Catalog=podcasts;" +
+                        "Persist Security Info=False;" +
+                        "User ID=sa;Password=yourStrong(!)Password;" +
+                        "MultipleActiveResultSets=False;" +
+                        "Encrypt=True;" +
+                        "TrustServerCertificate=True;" +
+                        "Connection Timeout=30;"),
+                });
+        });
+        base.ConfigureWebHost(builder);
+    }
+}
