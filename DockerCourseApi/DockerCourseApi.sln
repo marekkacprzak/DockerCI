@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerCourseApi", "DockerCourseApi\DockerCourseApi.csproj", "{CFD70D2B-9D12-46A8-80CC-2F7236749D76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerCourseApi.Tests", "DockerCourseApi.Tests\DeckerCourseApi.Tests.csproj", "{6E27A19C-7B33-4545-BD3F-73F508AB8E4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerCourseApi.Tests", "DockerCourseApi.Tests\DockerCourseApi.Tests.csproj", "{6E27A19C-7B33-4545-BD3F-73F508AB8E4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
