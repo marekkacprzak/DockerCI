@@ -14,7 +14,7 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
                 new[]
                 {
                     new KeyValuePair<string, string?>("ConnectionString",
-                        "Server=tcp:localhost;Initial Catalog=podcasts;" +
+                        "Server=tcp:host.docker.internal;Initial Catalog=podcasts;" +
                         "Persist Security Info=False;" +
                         "User ID=sa;Password=yourStrong(!)Password;" +
                         "MultipleActiveResultSets=False;" +
