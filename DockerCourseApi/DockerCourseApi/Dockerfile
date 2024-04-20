@@ -6,7 +6,7 @@ COPY . .
 WORKDIR "/src"
 ARG BUILD_CONFIGURATION=Release
 RUN dotnet build "DockerCourseApi/DockerCourseApi.csproj" -c $BUILD_CONFIGURATION -o /app/build 
-#RUN dotnet test "DockerCourseApi.Tests/DockerCourseApi.Tests.csproj"
+RUN dotnet test "DockerCourseApi.Tests/DockerCourseApi.Tests.csproj"
 RUN dotnet publish "DockerCourseApi/DockerCourseApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
 
