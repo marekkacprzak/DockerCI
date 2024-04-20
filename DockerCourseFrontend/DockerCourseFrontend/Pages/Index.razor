@@ -26,6 +26,6 @@ Welcome to your new app.
     
     private async Task GetPodcasts()
     {
-        _podcast = await HttpClient.GetFromJsonAsync<List<string>>("http://host.docker.internal:17860/podcasts");
+        _podcast = await HttpClient.GetFromJsonAsync<List<string>>("http://localhost:17860/podcasts");
     }
 }
